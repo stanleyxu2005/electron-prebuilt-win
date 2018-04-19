@@ -14,6 +14,8 @@ wget https://atom.io/download/electron/v${VER}/iojs-v${VER}.tar.gz -O ${IOJS_DIR
 wget https://atom.io/download/electron/v${VER}/win-x64/iojs.lib -O ${IOJS_DIR}/win-x64/iojs.lib
 wget https://atom.io/download/electron/v${VER}/win-x86/iojs.lib -O ${IOJS_DIR}/win-x86/iojs.lib
 echo "iojs (${VER}) header files have been saved to ${IOJS_DIR}"
+cd vendors && tar -zcvf iojs.tar.gz iojs && cd -
+\rm -rf ${IOJS_DIR}
 
 #DIST_DIR=dist
 #wget https://github.com/electron/electron/releases/download/v${VER}/electron-v${VER}-win32-x64.zip -O ${DIST_DIR}/electron-v${VER}-win32-x64.zip
