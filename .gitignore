@@ -1,0 +1,12 @@
+# ide
+.vscode
+.idea
+
+# tempfile
+dist
+node_modules
+src
+*.log
+
+# modules
+/tasks/*/github
