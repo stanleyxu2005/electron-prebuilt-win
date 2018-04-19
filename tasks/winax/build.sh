@@ -56,7 +56,7 @@ cd -
 #if [ -d ${ROOT_DIR}/${SRC_DIR} ] && [ -d ${ROOT_DIR}/tasks ]; then
 #  \rm -r ${ROOT_DIR}/${SRC_DIR}
 #fi
-DIST_DIR=${ROOT_DIR}/dist/resources/node_modules/${NAME}
+DIST_DIR=${ROOT_DIR}/dist/node_modules/${NAME}
 mkdir -p ${DIST_DIR}/build/Release
 #cp -r lib ${ZMQ_DIST_DIR}
 cp ${GYP_BUILD_DIR}/Release/*.node ${DIST_DIR}/build/Release
