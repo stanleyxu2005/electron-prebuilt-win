@@ -6,6 +6,7 @@ GIT_REPO="git@github.com:durs/node-activex.git"
 
 cd $(dirname $0)
 ROOT_DIR=$(pwd)/../..
+ELECTRON_DIR=${ROOT_DIR}/dist
 ELECTRON_VER=$(cat ${ROOT_DIR}/version)
 if [ -z ${ELECTRON_VER} ] || [ ! -d ${ROOT_DIR}/tasks ]; then
   echo "The build file is broken"
@@ -18,8 +19,6 @@ GYP_BUILD_DIR=${SRC_DIR}/build
 GYP_MSVS_VERSION=2015
 GYP_ARGS="--disturl=http://127.0.0.1/pub/iojs"
 
-#DIST_DIR=${PROJ_HOME}/dist
-#ZIP_CMD="${PROJ_HOME}/vendors/7z/7z.exe a"
 #LIBZMQ_FILE=libs/libzmq-4.2.2-x64.lib
 
 if [ ! -d ${SRC_DIR} ]; then
@@ -56,16 +55,12 @@ cd -
 #if [ -d ${ROOT_DIR}/${SRC_DIR} ] && [ -d ${ROOT_DIR}/tasks ]; then
 #  \rm -r ${ROOT_DIR}/${SRC_DIR}
 #fi
-DIST_DIR=${ROOT_DIR}/dist/node_modules/${NAME}
+DIST_DIR=${ELECTRON_DIR}/resources/node_modules/${NAME}
 mkdir -p ${DIST_DIR}/build/Release
-#cp -r lib ${ZMQ_DIST_DIR}
+#cp -r lib ${DIST_DIR}
 cp ${GYP_BUILD_DIR}/Release/*.node ${DIST_DIR}/build/Release
 for n in node_modules *.md *.js *.json; do
   cp -r ${SRC_DIR}/${n} ${DIST_DIR}
 done
-
-#cd ${PROJ_HOME}
-#\rm ${DIST_DIR}/node_modules.zip
-#${ZIP_CMD} ${DIST_DIR}/node_modules.zip node_modules/
 
 #echo "Run \"npm test\" to verify"

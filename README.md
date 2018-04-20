@@ -23,7 +23,7 @@ After the build is successful, you can launch `vendors\electron\electron.exe tes
  4. Update version in package.json 
  5. Run `npm publish`
  
-## How to use
+## How to load prebuilt modules
 
 Electron will only search `node_modules` from the application directory or upper, so these prebuilt
 node modules `dist/node_modules` will not be able to loaded. Here is a workaround:
@@ -34,6 +34,6 @@ start "" electron.exe myapp
 ```
 In the entry point (e.g. main.js), add this line at top
 ```
-const prebuiltModuleDir = process.env.ELECTRON_HOME + '\\node_modules'
+const prebuiltModuleDir = process.env.ELECTRON_HOME + '\\resources\\node_modules'
 require('module').globalPaths.push(prebuiltModuleDir)
 ```
