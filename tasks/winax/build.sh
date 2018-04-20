@@ -17,7 +17,6 @@ fi
 SRC_DIR=github
 GYP_BUILD_DIR=${SRC_DIR}/build
 GYP_MSVS_VERSION=2015
-GYP_ARGS="--disturl=http://127.0.0.1/pub/iojs"
 
 #LIBZMQ_FILE=libs/libzmq-4.2.2-x64.lib
 
