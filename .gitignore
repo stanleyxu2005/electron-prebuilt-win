@@ -6,6 +6,7 @@
 dist
 node_modules
 src
+build_local.sh
 *.log
 
 # modules
