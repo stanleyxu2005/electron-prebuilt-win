@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 DIST_DIR=dist
 export GYP_MSVS_VERSION=2015

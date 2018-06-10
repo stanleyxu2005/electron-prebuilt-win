@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 # configurable
 NAME=winax
@@ -30,12 +31,15 @@ fi
 cd ${SRC_DIR}
 if [[ "$1" == "--update-first" ]]; then
   echo "Updating $NAME from git repository..."
-  git reset HEAD *
-  git fetch origin
-  git pull --rebase
+  git reset HEAD * -q
+  git fetch origin -p -q
+  git pull --rebase -q
 fi
-echo "Install dependencies..."
-yarn install --prod --silent
+
+# https://github.com/durs/node-activex/issues/30
+#echo "Install dependencies..."
+#npm i --prod --verbose
+
 echo "Building $NAME for Electron ${ELECTRON_VER} on Windows (x64)..."
 rm -rf ${GYP_BUILD_DIR}
 BUILD_LOG=msbuild.log
@@ -50,15 +54,12 @@ fi
 \rm ${BUILD_LOG}
 cd -
 
-#if [ -d ${ROOT_DIR}/${SRC_DIR} ] && [ -d ${ROOT_DIR}/tasks ]; then
-#  \rm -r ${ROOT_DIR}/${SRC_DIR}
-#fi
 DIST_DIR=${ELECTRON_DIR}/resources/node_modules/${NAME}
 mkdir -p ${DIST_DIR}/build/Release
-#cp -r lib ${DIST_DIR}
 cp ${GYP_BUILD_DIR}/Release/*.node ${DIST_DIR}/build/Release
-for n in node_modules *.md *.js *.json; do
-  cp -r ${SRC_DIR}/${n} ${DIST_DIR}
-done
+#cp -r lib ${DIST_DIR}
+#for n in node_modules *.md *.js *.json; do
+#  cp -r ${SRC_DIR}/${n} ${DIST_DIR}
+#done
 
 #echo "Run \"npm test\" to verify"
