@@ -10,4 +10,4 @@ build_local.sh
 *.log
 
 # modules
-/tasks/*/github
+/tasks/**/github
