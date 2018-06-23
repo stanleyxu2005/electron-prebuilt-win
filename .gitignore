@@ -11,4 +11,4 @@ build_local.sh
 
 # modules
 /tasks/**/github
-/vendors/electron-*.zip
+/vendors/*.zip
