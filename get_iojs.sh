@@ -21,8 +21,4 @@ if [ ! -d ${IOJS_DIR} ]; then
   \rm -rf ${IOJS_DIR}
 fi
 
-ELECTRON_FILE=${DIST_DIR}/electron-win32-x64.zip
-wget https://github.com/electron/electron/releases/download/v${VER}/electron-v${VER}-win32-x64.zip -O ${ELECTRON_FILE}
-echo "Electron (${VER}) prebuilt binaries have been saved as ${ELECTRON_FILE}"
-
 echo ${VER} > version

@@ -37,8 +37,7 @@ echo "Building $NAME for Electron ${ELECTRON_VER} on Windows (x64)..."
 rm -rf ${GYP_BUILD_DIR}
 BUILD_LOG=msbuild.log
 node-gyp rebuild ${GYP_ARGS} \
-  --target_arch=x64 \
-  --runtime=electron --target=${ELECTRON_VER} \
+  --runtime=electron --target=${ELECTRON_VER} --target_arch=x64 \
   --build-from-source > ${BUILD_LOG}
 if [ $? -ne 0 ]; then
   echo "Failed to build, please check ${BUILD_LOG}"

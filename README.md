@@ -22,5 +22,5 @@ require('module').globalPaths.push(prebuiltModuleDir)
 
 ## How to build
 
- 1. Download iojs headers and electron build for Windows with this `./iojs.sh 2.0.2` (need bypass GFW)
+ 1. Download iojs headers for Windows with this `./get_iojs.sh 2.02.2` (from amazon.s3 slow!)
  2. Run `./build.sh` (you can comment out some sub tasks, if your project is file size sensitive)
