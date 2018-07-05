@@ -21,4 +21,4 @@ if [ ! -d ${IOJS_DIR} ]; then
   \rm -rf ${IOJS_DIR}
 fi
 
-echo ${VER} > version
+#echo ${VER} > version
