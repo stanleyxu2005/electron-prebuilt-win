@@ -16,7 +16,7 @@ if [ ! -d ${IOJS_DIR} ]; then
   wget https://atom.io/download/electron/v${VER}/win-x64/iojs.lib -O ${IOJS_DIR}/win-x64/iojs.lib
   wget https://atom.io/download/electron/v${VER}/win-x86/iojs.lib -O ${IOJS_DIR}/win-x86/iojs.lib
   ZIP_FILE=${DIST_DIR}/iojs.zip
-  \rm ${ZIP_FILE} && zip -r ${ZIP_FILE} ${IOJS_DIR}
+  \rm -f ${ZIP_FILE} && zip -r ${ZIP_FILE} ${IOJS_DIR}
   echo "iojs (${VER}) header files have been saved as ${ZIP_FILE}"
   \rm -rf ${IOJS_DIR}
 fi
