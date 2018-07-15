@@ -3,6 +3,10 @@ set -e
 
 DIST_DIR=dist
 ELECTRON_VER=$(cat version)
+if [[ -z $1 ]]; then
+  ELECTRON_VER=$1
+fi
+
 ELECTRON_FILE="electron-v${ELECTRON_VER}-win32-x64.zip"
 ELECTRON_FULLPATH="vendors/${ELECTRON_FILE}"
 export GYP_MSVS_VERSION=2015
