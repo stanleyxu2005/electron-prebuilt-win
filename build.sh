@@ -5,6 +5,7 @@ DIST_DIR=dist
 ELECTRON_VER=$(cat version)
 if [[ ! -z $1 ]]; then
   ELECTRON_VER=$1
+  echo "$1" > version
 fi
 
 echo "Building v${ELECTRON_VER}..."
