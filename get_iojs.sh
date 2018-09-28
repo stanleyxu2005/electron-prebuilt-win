@@ -13,6 +13,7 @@ if [ ! -d ${IOJS_DIR} ]; then
   mkdir -p ${IOJS_DIR}/win-x86
   wget https://atom.io/download/electron/v${VER}/SHASUMS256.txt -O ${IOJS_DIR}/SHASUMS256.txt
   wget https://atom.io/download/electron/v${VER}/iojs-v${VER}.tar.gz -O ${IOJS_DIR}/iojs-v${VER}.tar.gz
+  wget https://atom.io/download/electron/v${VER}/iojs-v${VER}-headers.tar.gz -O ${IOJS_DIR}/iojs-v${VER}-headers.tar.gz
   wget https://atom.io/download/electron/v${VER}/win-x64/iojs.lib -O ${IOJS_DIR}/win-x64/iojs.lib
   wget https://atom.io/download/electron/v${VER}/win-x86/iojs.lib -O ${IOJS_DIR}/win-x86/iojs.lib
   ZIP_FILE=${DIST_DIR}/iojs.zip
