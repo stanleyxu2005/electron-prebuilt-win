@@ -26,3 +26,6 @@ fi
 for proj in winax ffi; do
   ./tasks/${proj}/build.sh --update-first
 done
+
+# update version number in package.json
+sed -i "s/\"version\":\ *\"[^\"]*\"\ *,\ *$/\"version\": \"$ELECTRON_VER\",/g" package.json
