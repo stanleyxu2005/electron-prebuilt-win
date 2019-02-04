@@ -24,3 +24,12 @@ require('module').globalPaths.push(prebuiltModuleDir)
 
  1. Download iojs headers for Windows with this `./get_iojs.sh 2.02.2` (from amazon.s3 slow!)
  2. Run `./build.sh` (you can comment out some sub tasks, if your project is file size sensitive)
+
+## TODO
+
+Electron release cycle seems to be quite active these days. I'm not sure I could update the major release
+asap. My current focus to keep the latest stable versions to be synchronized. Unstable versions or lagacy
+stable version might not be taken good care of. Here are some todo items:
+
+ 1. If you are a Travis expert, please help to make the build in Travis CI system.
+ 2. If you have special needs of certain Electron version, please contact me with Wechat "qxu0000".
